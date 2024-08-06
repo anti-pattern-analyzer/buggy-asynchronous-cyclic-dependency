@@ -9,4 +9,4 @@ Consider three microservices: Service A, Service B, and Service C.
 
 Technologies
 - Java
-- Kafka
+- RabbitMQ
