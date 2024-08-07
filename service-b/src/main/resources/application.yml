@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: service-b
+
+server:
+  port: 8081
+
+rabbitmq:
+  queue:
+    a: a_queue
+    b: b_queue
+  exchange:
+    b: b_exchange
+  routingKey:
+    b: b_routing_key
