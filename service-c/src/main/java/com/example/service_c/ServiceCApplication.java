@@ -1,7 +1,10 @@
 package com.example.service_c;
 
+import io.opentelemetry.exporter.otlp.trace.OtlpGrpcSpanExporter;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class ServiceCApplication {
@@ -10,4 +13,8 @@ public class ServiceCApplication {
 		SpringApplication.run(ServiceCApplication.class, args);
 	}
 
+	@Bean
+	public OtlpGrpcSpanExporter otlpHttpSpanExporter(@Value("${tracing.url}") String url) {
+		return OtlpGrpcSpanExporter.builder().setEndpoint(url).build();
+	}
 }
